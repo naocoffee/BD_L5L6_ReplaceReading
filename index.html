@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>置換リーディング練習｜Lesson 5・6</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>置換リーディング練習</h1>
+    <p class="sub">Lesson 5 AI Meets the Arts ／ Lesson 6 Dynamic Pricing</p>
+  </header>
+
+  <!-- ===== 初期画面 ===== -->
+  <main id="setup" class="screen">
+    <section class="card">
+      <h2>① 解答形式</h2>
+      <div class="choice-row" id="modeChoices">
+        <label class="pill"><input type="radio" name="mode" value="write" checked><span>✏️ 記述（入力）</span></label>
+        <label class="pill"><input type="radio" name="mode" value="select"><span>👆 選択（4択）</span></label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>② Lesson</h2>
+      <div class="choice-row" id="lessonChoices"></div>
+    </section>
+
+    <section class="card">
+      <h2>③ Part</h2>
+      <div class="choice-row" id="partChoices"></div>
+    </section>
+
+    <button id="startBtn" class="btn primary big">スタート</button>
+  </main>
+
+  <!-- ===== 練習画面 ===== -->
+  <main id="practice" class="screen hidden">
+    <div class="toolbar">
+      <button id="backBtn" class="btn ghost">← 選び直す</button>
+      <div id="practiceTitle" class="practice-title"></div>
+      <div id="progress" class="progress"></div>
+    </div>
+
+    <div id="passage" class="passage card"></div>
+
+    <!-- 記述モード用 -->
+    <div id="writeControls" class="controls hidden">
+      <button id="checkBtn" class="btn primary">採点する</button>
+      <button id="retryWrongBtn" class="btn hidden">間違いだけやり直す</button>
+      <button id="resetBtn" class="btn ghost">全部消す</button>
+      <button id="showAnsBtn" class="btn ghost">答えを見る</button>
+    </div>
+
+    <!-- 選択モード用 -->
+    <div id="selectPanel" class="select-panel hidden">
+      <div id="selectHint" class="select-hint"></div>
+      <div id="selectOptions" class="select-options"></div>
+      <div id="selectFeedback" class="select-feedback"></div>
+    </div>
+
+    <div id="result" class="result card hidden"></div>
+  </main>
+
+  <footer class="app-footer">（　）内の日本語に合う英語を答えよう。丸数字は語数、「-s」などは語形のヒントです。</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
